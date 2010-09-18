@@ -12,12 +12,9 @@
 
 @interface AECameraCalibration : NSObject {
     
-    float focalX;
-    float focalY;
-    float centerX;
-    float centerY;
-    
-    float distorion[5];
+    CGPoint focal;
+    CGPoint center;
+    CGFloat distorion[5];
     
 @private
     

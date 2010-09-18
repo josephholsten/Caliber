@@ -29,7 +29,6 @@
     int totalCorners = numImages * numCorners;
     
     // TODO: detect which boards are good
-    // TODO: save the altered images
         
     // Allocate Sotrage
     CvMat* image_points         = cvCreateMat(totalCorners, 2, CV_32FC1);
@@ -38,7 +37,7 @@
     CvMat* intrinsic_matrix		= cvCreateMat(3, 3, CV_32FC1);
     CvMat* distortion_coeffs	= cvCreateMat(5, 1, CV_32FC1);
     
-    // If we got a good board, add it to our data
+    // Insert corner data and faked 3d data into matrices
     for (int i = 0; i < numImages; i++) {
         for (int j = i * numCorners, k = 0; k < numCorners; j++, k++) {
             CV_MAT_ELEM(*image_points, float, j, 0) = corners[j].x;
@@ -58,10 +57,10 @@
                        intrinsic_matrix, distortion_coeffs, NULL, NULL, flags); 
     
     // Copy results to calibration object
-    focalX = CV_MAT_ELEM(*intrinsic_matrix, float, 0, 0);
-    focalY = CV_MAT_ELEM(*intrinsic_matrix, float, 1, 1);
-    centerX = CV_MAT_ELEM(*intrinsic_matrix, float, 0, 2);
-    centerY = CV_MAT_ELEM(*intrinsic_matrix, float, 1, 2);
+    focal.x = CV_MAT_ELEM(*intrinsic_matrix, float, 0, 0);
+    focal.y = CV_MAT_ELEM(*intrinsic_matrix, float, 1, 1);
+    center.x = CV_MAT_ELEM(*intrinsic_matrix, float, 0, 2);
+    center.y = CV_MAT_ELEM(*intrinsic_matrix, float, 1, 2);
     for (int i = 0; i < 5; i++)
         distorion[i] = CV_MAT_ELEM(*distortion_coeffs, float, i, 0);    
      
