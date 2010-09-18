@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "AECalibrationTarget.h"
-#import "opencv/cv.h"
 
 @class AECameraCalibration;
 

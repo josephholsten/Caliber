@@ -16,8 +16,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* AEChessboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */; };
 		5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EC51512406381001CF4D4 /* AECameraCalibration.m */; };
-		5E9747C1123D7A3600B8EB8C /* AEImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9747BF123D7A3600B8EB8C /* AEImageListViewController.m */; };
-		5E9747C2123D7A3600B8EB8C /* AEImageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9747C0123D7A3600B8EB8C /* AEImageListViewController.xib */; };
 		5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */; };
 		5EADC492123C514C00E1D0CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC491123C514C00E1D0CE /* AVFoundation.framework */; };
 		5EADC4FA123C5BEA00E1D0CE /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F5123C5B4900E1D0CE /* libcv.a */; };
@@ -45,9 +43,6 @@
 		5E8EC4FE12406214001CF4D4 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		5E8EC51412406381001CF4D4 /* AECameraCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECameraCalibration.h; sourceTree = "<group>"; };
 		5E8EC51512406381001CF4D4 /* AECameraCalibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECameraCalibration.m; sourceTree = "<group>"; };
-		5E9747BE123D7A3600B8EB8C /* AEImageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEImageListViewController.h; sourceTree = "<group>"; };
-		5E9747BF123D7A3600B8EB8C /* AEImageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEImageListViewController.m; sourceTree = "<group>"; };
-		5E9747C0123D7A3600B8EB8C /* AEImageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AEImageListViewController.xib; path = Classes/AEImageListViewController.xib; sourceTree = "<group>"; };
 		5EA8DE9312453EE7002CD99B /* AECameraMultiCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECameraMultiCalibration.h; sourceTree = "<group>"; };
 		5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECameraMultiCalibration.m; sourceTree = "<group>"; };
 		5EA8DE9612454292002CD99B /* AECalibrationTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECalibrationTarget.h; sourceTree = "<group>"; };
@@ -113,19 +108,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5EA8DE9612454292002CD99B /* AECalibrationTarget.h */,
-				5EA8DE9312453EE7002CD99B /* AECameraMultiCalibration.h */,
-				5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */,
-				5EFF153B123D6D2300AE366B /* utilities */,
+				5E1BF2C81245654B0011ACD4 /* Controllers */,
+				5E1BF2C7124565440011ACD4 /* Views */,
+				5E1BF2C61245653A0011ACD4 /* Models */,
+				5EFF153B123D6D2300AE366B /* Utilities */,
 				5EADC516123C5D0800E1D0CE /* opencv */,
 				1D3623240D0F684500981E51 /* AEChessboardAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AEChessboardAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* AEChessboardViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */,
-				5E9747BE123D7A3600B8EB8C /* AEImageListViewController.h */,
-				5E9747BF123D7A3600B8EB8C /* AEImageListViewController.m */,
-				5E8EC51412406381001CF4D4 /* AECameraCalibration.h */,
-				5E8EC51512406381001CF4D4 /* AECameraCalibration.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -165,7 +154,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5E9747C0123D7A3600B8EB8C /* AEImageListViewController.xib */,
 				2899E5210DE3E06400AC0155 /* ChessboardViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Chessboard-Info.plist */,
@@ -182,6 +170,34 @@
 				5EADC491123C514C00E1D0CE /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E1BF2C61245653A0011ACD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EA8DE9612454292002CD99B /* AECalibrationTarget.h */,
+				5E8EC51412406381001CF4D4 /* AECameraCalibration.h */,
+				5E8EC51512406381001CF4D4 /* AECameraCalibration.m */,
+				5EA8DE9312453EE7002CD99B /* AECameraMultiCalibration.h */,
+				5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5E1BF2C7124565440011ACD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E1BF2C81245654B0011ACD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* AEChessboardViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5EADC4F3123C5B0E00E1D0CE /* Static Libraries */ = {
@@ -224,13 +240,13 @@
 			path = opencv;
 			sourceTree = "<group>";
 		};
-		5EFF153B123D6D2300AE366B /* utilities */ = {
+		5EFF153B123D6D2300AE366B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				5EFF153C123D6D2300AE366B /* Utilities.h */,
 				5EFF153D123D6D2300AE366B /* Utilities.m */,
 			);
-			name = utilities;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +319,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* ChessboardViewController.xib in Resources */,
-				5E9747C2123D7A3600B8EB8C /* AEImageListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +356,6 @@
 				1D3623260D0F684500981E51 /* AEChessboardAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* AEChessboardViewController.m in Sources */,
 				5EFF153E123D6D2300AE366B /* Utilities.m in Sources */,
-				5E9747C1123D7A3600B8EB8C /* AEImageListViewController.m in Sources */,
 				5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */,
 				5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */,
 			);

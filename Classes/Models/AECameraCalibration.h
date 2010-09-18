@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AECalibrationTarget.h"
-#import "opencv/cv.h"
+#import "../opencv/cv.h"
 
 @interface AECameraCalibration : NSObject {
     

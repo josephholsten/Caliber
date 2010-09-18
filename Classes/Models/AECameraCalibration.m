@@ -27,8 +27,6 @@
     int boardWidth = 7;
     int numCorners = boardWidth * boardWidth;
     int totalCorners = numImages * numCorners;
-    
-    // TODO: detect which boards are good
         
     // Allocate Sotrage
     CvMat* image_points         = cvCreateMat(totalCorners, 2, CV_32FC1);
