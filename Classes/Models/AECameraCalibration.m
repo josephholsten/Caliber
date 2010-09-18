@@ -20,6 +20,15 @@
     return self;
 }
 
+- (void)logResults
+{
+    NSString* matrixRow = @"| % 8.2f  % 8.2f  % 8.2f |";
+    NSLog(@"Calibration results:");
+    NSLog(matrixRow, focal.x, 0.0, center.x);
+    NSLog(matrixRow, 0.0, focal.y, center.y);
+    NSLog(matrixRow, 0.0, 0.0, 1.0);
+}
+
 - (void)calibrate:(int)numImages
       withCorners:(CvPoint2D32f*)corners
     andResolution:(CGSize) resolution

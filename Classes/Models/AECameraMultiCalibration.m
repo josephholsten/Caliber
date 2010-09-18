@@ -60,6 +60,8 @@
                    withCorners:cornersPtr
                  andResolution:resolution];
     }];
+    
+    [centerFixed logResults];
 }
 
 - (void)findChessboardsInImages:(NSArray*)images

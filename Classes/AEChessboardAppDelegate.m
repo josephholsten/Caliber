@@ -8,6 +8,7 @@
 
 #import "AEChessboardAppDelegate.h"
 #import "AEChessboardViewController.h"
+#import "AECameraMultiCalibration.h"
 
 @implementation AEChessboardAppDelegate
 
@@ -19,13 +20,15 @@
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    viewController.calibrationTarget = (id<AECalibrationTarget>)calibration;
+    calibration = [[AECameraMultiCalibration alloc] init];
+    viewController.calibrationTarget = calibration;
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 }
 
 
 - (void)dealloc {
+    [calibration release];
     [viewController release];
     [window release];
     [super dealloc];

@@ -22,8 +22,11 @@
 }
 
 - (id)initWithFlags:(int) flags;
+
 - (void)calibrate:(int)numImages 
       withCorners:(CvPoint2D32f*)corners
     andResolution:(CGSize)resolution;
+
+- (void)logResults;
 
 @end

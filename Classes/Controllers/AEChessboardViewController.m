@@ -28,9 +28,12 @@
 
 
 - (IBAction)chessboardDetect:(id) sender {
+    NSLog(@"Running chessboardDetect on delegate %@", calibrationTarget);
     NSMutableArray* modified = [[NSMutableArray alloc] initWithCapacity:[images count]];
     [calibrationTarget setResolution:[[images objectAtIndex:0] size]];
     [calibrationTarget calibrateWithImages:images intoModifiedImages:modified];
+    UIImage* firstModified = [modified objectAtIndex:0];
+    imageView.image = firstModified;
     [modified release];
 }
 
