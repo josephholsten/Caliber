@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AECalibrationTarget.h"
+#import "opencv/cv.h"
 
 @interface AECameraCalibration : NSObject {
-
-    @public
     
     float focalX;
     float focalY;
@@ -19,6 +18,15 @@
     float centerY;
     
     float distorion[5];
+    
+@private
+    
+    int flags;
 }
+
+- (id)initWithFlags:(int) flags;
+- (void)calibrate:(int)numImages 
+      withCorners:(CvPoint2D32f*)corners
+    andResolution:(CGSize)resolution;
 
 @end

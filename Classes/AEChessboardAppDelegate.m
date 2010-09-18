@@ -18,11 +18,11 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+    viewController.calibrationTarget = (id<AECalibrationTarget>)calibration;
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 }
-
 
 
 - (void)dealloc {

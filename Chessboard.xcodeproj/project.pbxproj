@@ -18,6 +18,7 @@
 		5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EC51512406381001CF4D4 /* AECameraCalibration.m */; };
 		5E9747C1123D7A3600B8EB8C /* AEImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9747BF123D7A3600B8EB8C /* AEImageListViewController.m */; };
 		5E9747C2123D7A3600B8EB8C /* AEImageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9747C0123D7A3600B8EB8C /* AEImageListViewController.xib */; };
+		5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */; };
 		5EADC492123C514C00E1D0CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC491123C514C00E1D0CE /* AVFoundation.framework */; };
 		5EADC4FA123C5BEA00E1D0CE /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F5123C5B4900E1D0CE /* libcv.a */; };
 		5EADC4FB123C5BEA00E1D0CE /* libcvaux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F6123C5B4900E1D0CE /* libcvaux.a */; };
@@ -47,6 +48,9 @@
 		5E9747BE123D7A3600B8EB8C /* AEImageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEImageListViewController.h; sourceTree = "<group>"; };
 		5E9747BF123D7A3600B8EB8C /* AEImageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEImageListViewController.m; sourceTree = "<group>"; };
 		5E9747C0123D7A3600B8EB8C /* AEImageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AEImageListViewController.xib; path = Classes/AEImageListViewController.xib; sourceTree = "<group>"; };
+		5EA8DE9312453EE7002CD99B /* AECameraMultiCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECameraMultiCalibration.h; sourceTree = "<group>"; };
+		5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECameraMultiCalibration.m; sourceTree = "<group>"; };
+		5EA8DE9612454292002CD99B /* AECalibrationTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECalibrationTarget.h; sourceTree = "<group>"; };
 		5EADC491123C514C00E1D0CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5EADC4F5123C5B4900E1D0CE /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcv.a; sourceTree = "<group>"; };
 		5EADC4F6123C5B4900E1D0CE /* libcvaux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcvaux.a; sourceTree = "<group>"; };
@@ -109,6 +113,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5EA8DE9612454292002CD99B /* AECalibrationTarget.h */,
+				5EA8DE9312453EE7002CD99B /* AECameraMultiCalibration.h */,
+				5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */,
 				5EFF153B123D6D2300AE366B /* utilities */,
 				5EADC516123C5D0800E1D0CE /* opencv */,
 				1D3623240D0F684500981E51 /* AEChessboardAppDelegate.h */,
@@ -336,6 +343,7 @@
 				5EFF153E123D6D2300AE366B /* Utilities.m in Sources */,
 				5E9747C1123D7A3600B8EB8C /* AEImageListViewController.m in Sources */,
 				5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */,
+				5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

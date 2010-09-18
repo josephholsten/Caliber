@@ -10,13 +10,16 @@
 #import <AVFoundation/AVFoundation.h>
 
 @class AEChessboardViewController;
+@class AECameraMultiCalibration;
 
 @interface AEChessboardAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    AEChessboardViewController *viewController;
+    UIWindow* window;
+    AEChessboardViewController* viewController;
+@private
+    AECameraMultiCalibration* calibration;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet AEChessboardViewController *viewController;
+@property (nonatomic, retain) IBOutlet UIWindow* window;
+@property (nonatomic, retain) IBOutlet AEChessboardViewController* viewController;
 
 @end
