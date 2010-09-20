@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "opencv/cv.h"
+#import "Constants.h"
 
-@interface Utilities : NSObject {
-
-}
+@interface Utilities : NSObject 
 
 // Utility Methods
 + (IplImage *)CreateIplImageFromUIImage:(UIImage *)image;
@@ -19,6 +18,7 @@
 + (UIImage *)scaleAndRotateImage:(UIImage *)image;
 
 // Chessboard detection methods
-+ (UIImage *) opencvChessboardDetect:(UIImage *)originalImage forCorners:(CvPoint2D32f*)corners;
++ (BOOL) opencvChessboardDetect:(IplImage*)originalImage forCorners:(CvPoint2D32f*)corners;
++ (BOOL) isChessboardLikelyInImage:(IplImage*)image;
 
 @end

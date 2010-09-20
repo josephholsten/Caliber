@@ -7,7 +7,7 @@
 //
 
 #import "AEChessboardAppDelegate.h"
-#import "AEChessboardViewController.h"
+#import "AEFrameCaptureViewController.h"
 #import "AECameraMultiCalibration.h"
 
 @implementation AEChessboardAppDelegate

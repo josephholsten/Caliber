@@ -12,17 +12,17 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		2899E5220DE3E06400AC0155 /* ChessboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ChessboardViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		28D7ACF80DDB3853001CB0EB /* AEChessboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */; };
+		5E8D50D212468BD5008D60B9 /* AEFrameCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D50D112468BD5008D60B9 /* AEFrameCaptureViewController.m */; };
+		5E8D50D512468DF7008D60B9 /* AEFrameCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D50D412468DF7008D60B9 /* AEFrameCaptureViewController.xib */; };
+		5E8D512C12469376008D60B9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8D512B12469376008D60B9 /* CoreVideo.framework */; };
+		5E8D51301246937E008D60B9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8D512F1246937E008D60B9 /* CoreMedia.framework */; };
+		5E8D52531246C89F008D60B9 /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8D52511246C89F008D60B9 /* libcv.a */; };
+		5E8D52541246C89F008D60B9 /* libcxcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8D52521246C89F008D60B9 /* libcxcore.a */; };
+		5E8D52711246CADF008D60B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8D52701246CADF008D60B9 /* Accelerate.framework */; };
 		5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EC51512406381001CF4D4 /* AECameraCalibration.m */; };
 		5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */; };
 		5EADC492123C514C00E1D0CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC491123C514C00E1D0CE /* AVFoundation.framework */; };
-		5EADC4FA123C5BEA00E1D0CE /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F5123C5B4900E1D0CE /* libcv.a */; };
-		5EADC4FB123C5BEA00E1D0CE /* libcvaux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F6123C5B4900E1D0CE /* libcvaux.a */; };
-		5EADC4FC123C5BEA00E1D0CE /* libcxcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F7123C5B4900E1D0CE /* libcxcore.a */; };
-		5EADC4FD123C5BEA00E1D0CE /* libhighgui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F8123C5B4900E1D0CE /* libhighgui.a */; };
-		5EADC4FE123C5BEA00E1D0CE /* libml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EADC4F9123C5B4900E1D0CE /* libml.a */; };
 		5EFF153E123D6D2300AE366B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF153D123D6D2300AE366B /* Utilities.m */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +33,18 @@
 		1D6058910D05DD3D006BFB54 /* Chessboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chessboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* ChessboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChessboardViewController.xib; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* AEChessboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEChessboardViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEChessboardViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Chessboard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chessboard_Prefix.pch; sourceTree = "<group>"; };
+		5E8D50D012468BD5008D60B9 /* AEFrameCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEFrameCaptureViewController.h; sourceTree = "<group>"; };
+		5E8D50D112468BD5008D60B9 /* AEFrameCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFrameCaptureViewController.m; sourceTree = "<group>"; };
+		5E8D50D412468DF7008D60B9 /* AEFrameCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AEFrameCaptureViewController.xib; sourceTree = "<group>"; };
+		5E8D512B12469376008D60B9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5E8D512F1246937E008D60B9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5E8D52511246C89F008D60B9 /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcv.a; sourceTree = "<group>"; };
+		5E8D52521246C89F008D60B9 /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcxcore.a; sourceTree = "<group>"; };
+		5E8D52701246CADF008D60B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		5E8D52D61246DB6A008D60B9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5E8EC4FD12406214001CF4D4 /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8EC4FE12406214001CF4D4 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		5E8EC51412406381001CF4D4 /* AECameraCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECameraCalibration.h; sourceTree = "<group>"; };
@@ -47,32 +53,6 @@
 		5EA8DE9412453EE7002CD99B /* AECameraMultiCalibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECameraMultiCalibration.m; sourceTree = "<group>"; };
 		5EA8DE9612454292002CD99B /* AECalibrationTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECalibrationTarget.h; sourceTree = "<group>"; };
 		5EADC491123C514C00E1D0CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5EADC4F5123C5B4900E1D0CE /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcv.a; sourceTree = "<group>"; };
-		5EADC4F6123C5B4900E1D0CE /* libcvaux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcvaux.a; sourceTree = "<group>"; };
-		5EADC4F7123C5B4900E1D0CE /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcxcore.a; sourceTree = "<group>"; };
-		5EADC4F8123C5B4900E1D0CE /* libhighgui.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhighgui.a; sourceTree = "<group>"; };
-		5EADC4F9123C5B4900E1D0CE /* libml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libml.a; sourceTree = "<group>"; };
-		5EADC517123C5D0800E1D0CE /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
-		5EADC518123C5D0800E1D0CE /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
-		5EADC519123C5D0800E1D0CE /* cvaux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvaux.h; sourceTree = "<group>"; };
-		5EADC51A123C5D0800E1D0CE /* cvaux.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cvaux.hpp; sourceTree = "<group>"; };
-		5EADC51B123C5D0800E1D0CE /* cvcompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvcompat.h; sourceTree = "<group>"; };
-		5EADC51C123C5D0800E1D0CE /* cvstreams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvstreams.h; sourceTree = "<group>"; };
-		5EADC51D123C5D0800E1D0CE /* cvtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvtypes.h; sourceTree = "<group>"; };
-		5EADC51E123C5D0800E1D0CE /* cvver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvver.h; sourceTree = "<group>"; };
-		5EADC51F123C5D0800E1D0CE /* cvvidsurv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cvvidsurv.hpp; sourceTree = "<group>"; };
-		5EADC520123C5D0800E1D0CE /* cvwimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvwimage.h; sourceTree = "<group>"; };
-		5EADC521123C5D0800E1D0CE /* cxcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cxcore.h; sourceTree = "<group>"; };
-		5EADC522123C5D0800E1D0CE /* cxcore.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cxcore.hpp; sourceTree = "<group>"; };
-		5EADC523123C5D0800E1D0CE /* cxerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cxerror.h; sourceTree = "<group>"; };
-		5EADC524123C5D0800E1D0CE /* cxflann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cxflann.h; sourceTree = "<group>"; };
-		5EADC525123C5D0800E1D0CE /* cxmat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cxmat.hpp; sourceTree = "<group>"; };
-		5EADC526123C5D0800E1D0CE /* cxmisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cxmisc.h; sourceTree = "<group>"; };
-		5EADC527123C5D0800E1D0CE /* cxoperations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cxoperations.hpp; sourceTree = "<group>"; };
-		5EADC528123C5D0800E1D0CE /* cxtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cxtypes.h; sourceTree = "<group>"; };
-		5EADC529123C5D0800E1D0CE /* highgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = highgui.h; sourceTree = "<group>"; };
-		5EADC52A123C5D0800E1D0CE /* highgui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = highgui.hpp; sourceTree = "<group>"; };
-		5EADC52B123C5D0800E1D0CE /* ml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		5EFF153C123D6D2300AE366B /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		5EFF153D123D6D2300AE366B /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Chessboard-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Chessboard-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -83,15 +63,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EADC4FA123C5BEA00E1D0CE /* libcv.a in Frameworks */,
-				5EADC4FB123C5BEA00E1D0CE /* libcvaux.a in Frameworks */,
-				5EADC4FC123C5BEA00E1D0CE /* libcxcore.a in Frameworks */,
-				5EADC4FD123C5BEA00E1D0CE /* libhighgui.a in Frameworks */,
-				5EADC4FE123C5BEA00E1D0CE /* libml.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				5EADC492123C514C00E1D0CE /* AVFoundation.framework in Frameworks */,
+				5E8D512C12469376008D60B9 /* CoreVideo.framework in Frameworks */,
+				5E8D51301246937E008D60B9 /* CoreMedia.framework in Frameworks */,
+				5E8D52531246C89F008D60B9 /* libcv.a in Frameworks */,
+				5E8D52541246C89F008D60B9 /* libcxcore.a in Frameworks */,
+				5E8D52711246CADF008D60B9 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +114,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				5EADC4F3123C5B0E00E1D0CE /* Static Libraries */,
+				5EADC4F3123C5B0E00E1D0CE /* Ext */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				5E8EC4FE12406214001CF4D4 /* Test-Info.plist */,
@@ -154,7 +134,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2899E5210DE3E06400AC0155 /* ChessboardViewController.xib */,
+				5E8D50D412468DF7008D60B9 /* AEFrameCaptureViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Chessboard-Info.plist */,
 			);
@@ -168,6 +148,9 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				5EADC491123C514C00E1D0CE /* AVFoundation.framework */,
+				5E8D512B12469376008D60B9 /* CoreVideo.framework */,
+				5E8D512F1246937E008D60B9 /* CoreMedia.framework */,
+				5E8D52701246CADF008D60B9 /* Accelerate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,48 +177,24 @@
 		5E1BF2C81245654B0011ACD4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				28D7ACF60DDB3853001CB0EB /* AEChessboardViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* AEChessboardViewController.m */,
+				5E8D50D012468BD5008D60B9 /* AEFrameCaptureViewController.h */,
+				5E8D50D112468BD5008D60B9 /* AEFrameCaptureViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		5EADC4F3123C5B0E00E1D0CE /* Static Libraries */ = {
+		5EADC4F3123C5B0E00E1D0CE /* Ext */ = {
 			isa = PBXGroup;
 			children = (
-				5EADC4F5123C5B4900E1D0CE /* libcv.a */,
-				5EADC4F6123C5B4900E1D0CE /* libcvaux.a */,
-				5EADC4F7123C5B4900E1D0CE /* libcxcore.a */,
-				5EADC4F8123C5B4900E1D0CE /* libhighgui.a */,
-				5EADC4F9123C5B4900E1D0CE /* libml.a */,
+				5E8D52511246C89F008D60B9 /* libcv.a */,
+				5E8D52521246C89F008D60B9 /* libcxcore.a */,
 			);
-			name = "Static Libraries";
+			path = Ext;
 			sourceTree = "<group>";
 		};
 		5EADC516123C5D0800E1D0CE /* opencv */ = {
 			isa = PBXGroup;
 			children = (
-				5EADC517123C5D0800E1D0CE /* cv.h */,
-				5EADC518123C5D0800E1D0CE /* cv.hpp */,
-				5EADC519123C5D0800E1D0CE /* cvaux.h */,
-				5EADC51A123C5D0800E1D0CE /* cvaux.hpp */,
-				5EADC51B123C5D0800E1D0CE /* cvcompat.h */,
-				5EADC51C123C5D0800E1D0CE /* cvstreams.h */,
-				5EADC51D123C5D0800E1D0CE /* cvtypes.h */,
-				5EADC51E123C5D0800E1D0CE /* cvver.h */,
-				5EADC51F123C5D0800E1D0CE /* cvvidsurv.hpp */,
-				5EADC520123C5D0800E1D0CE /* cvwimage.h */,
-				5EADC521123C5D0800E1D0CE /* cxcore.h */,
-				5EADC522123C5D0800E1D0CE /* cxcore.hpp */,
-				5EADC523123C5D0800E1D0CE /* cxerror.h */,
-				5EADC524123C5D0800E1D0CE /* cxflann.h */,
-				5EADC525123C5D0800E1D0CE /* cxmat.hpp */,
-				5EADC526123C5D0800E1D0CE /* cxmisc.h */,
-				5EADC527123C5D0800E1D0CE /* cxoperations.hpp */,
-				5EADC528123C5D0800E1D0CE /* cxtypes.h */,
-				5EADC529123C5D0800E1D0CE /* highgui.h */,
-				5EADC52A123C5D0800E1D0CE /* highgui.hpp */,
-				5EADC52B123C5D0800E1D0CE /* ml.h */,
 			);
 			path = opencv;
 			sourceTree = "<group>";
@@ -245,6 +204,7 @@
 			children = (
 				5EFF153C123D6D2300AE366B /* Utilities.h */,
 				5EFF153D123D6D2300AE366B /* Utilities.m */,
+				5E8D52D61246DB6A008D60B9 /* Constants.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -318,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				2899E5220DE3E06400AC0155 /* ChessboardViewController.xib in Resources */,
+				5E8D50D512468DF7008D60B9 /* AEFrameCaptureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +314,10 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AEChessboardAppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* AEChessboardViewController.m in Sources */,
 				5EFF153E123D6D2300AE366B /* Utilities.m in Sources */,
 				5E8EC51612406381001CF4D4 /* AECameraCalibration.m in Sources */,
 				5EA8DE9512453EE7002CD99B /* AECameraMultiCalibration.m in Sources */,
+				5E8D50D212468BD5008D60B9 /* AEFrameCaptureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,10 +344,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Ext\"",
 				);
 				OTHER_LDFLAGS = (
-					"-lstdc++",
 					"-lz",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = Chessboard;
 			};
@@ -404,6 +365,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Ext\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = Chessboard;
 				VALIDATE_PRODUCT = YES;

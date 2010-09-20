@@ -36,17 +36,21 @@
 + (UIImage *)UIImageFromIplImage:(IplImage *)image {
 	NSLog(@"IplImage (%d, %d) %d bits by %d channels, %d bytes/row %s", image->width, image->height, image->depth, image->nChannels, image->widthStep, image->channelSeq);
 	
+    IplImage *iplimage = cvCreateImage(cvGetSize(image), IPL_DEPTH_8U, 3);
+    cvCvtColor(image, iplimage, CV_BGR2RGB);
+    
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-	NSData *data = [NSData dataWithBytes:image->imageData length:image->imageSize];
+	NSData *data = [NSData dataWithBytes:iplimage->imageData length:iplimage->imageSize];
 	CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)data);
-	CGImageRef imageRef = CGImageCreate(image->width, image->height,
-										image->depth, image->depth * image->nChannels, image->widthStep,
+	CGImageRef imageRef = CGImageCreate(iplimage->width, iplimage->height,
+										iplimage->depth, iplimage->depth * iplimage->nChannels, iplimage->widthStep,
 										colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
 										provider, NULL, false, kCGRenderingIntentDefault);
 	UIImage *ret = [UIImage imageWithCGImage:imageRef];
 	CGImageRelease(imageRef);
 	CGDataProviderRelease(provider);
 	CGColorSpaceRelease(colorSpace);
+    cvReleaseImage(&iplimage);
 	return ret;
 }
 
@@ -142,34 +146,44 @@
 	return returnImage;
 }
 
-+ (UIImage *) opencvChessboardDetect:(UIImage *)originalImage forCorners:(CvPoint2D32f*)corners {
-	
++ (BOOL) opencvChessboardDetect:(IplImage*)image forCorners:(CvPoint2D32f*)corners {
+
     cvSetErrMode(CV_ErrModeParent);
-    
+
     // set up the board-finding parameters
     int numSquares = 7;
     CvSize boardSize = cvSize(numSquares, numSquares);
     int numCorners;
     
-    // grab and scale the image
-    IplImage *image = [self CreateIplImageFromUIImage:originalImage];
-    IplImage *gray = cvCreateImage(cvGetSize(image), 8, 1);
-    
     // detect chessboard corners
-    int found = cvFindChessboardCorners(image, boardSize, corners, &numCorners, CV_CALIB_FIX_PRINCIPAL_POINT);
+    int found = cvFindChessboardCorners(image, boardSize, corners, &numCorners, 0);
     if (found > 0) {
+        // should this use IPL_DEPTH_8U instead of 8? 
+        IplImage *gray = cvCreateImage(cvGetSize(image), 8, 1);
+
         cvCvtColor(image, gray, CV_BGR2GRAY);
         cvFindCornerSubPix(gray, corners, numCorners, cvSize(11, 11), cvSize(-1, -1), 
                            cvTermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 30, 0.1));
-        cvDrawChessboardCorners(image, boardSize, corners, numCorners, found);
+
+        cvReleaseImage(&gray);
+        return YES;
     }
-    cvCvtColor(image, image, CV_BGR2RGB);
     
-    UIImage* returnImage = [Utilities UIImageFromIplImage:image];
-    cvReleaseImage(&image);
-    cvReleaseImage(&gray);
+    return NO;
+}
+
++ (BOOL) isChessboardLikelyInImage:(IplImage*)image
+{
+    cvSetErrMode(CV_ErrModeParent);
+
+    int numSquares = 7;
+    int numCorners;
+    CvSize boardSize = cvSize(numSquares, numSquares);
+    CvPoint2D32f corners[numSquares * numSquares];
     
-    return returnImage;
+    int found = cvFindChessboardCorners(image, boardSize, corners, &numCorners, CV_CALIB_CB_FAST_CHECK);
+    //int found = cvCheckChessboard(image, boardSize);
+    return (found > 0);
 }
 
 @end

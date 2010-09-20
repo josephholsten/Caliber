@@ -14,7 +14,7 @@
     
     CGPoint focal;
     CGPoint center;
-    CGFloat distorion[5];
+    CGFloat distortion[5];
     
 @private
     

@@ -10,7 +10,7 @@
 
 @implementation AECameraCalibration
 
-- (id)initWithFlags:(int)initFlags;
+- (id)initWithFlags:(int)initFlags
 {
     if (![super init])
         return nil;
@@ -23,7 +23,6 @@
 - (void)logResults
 {
     NSString* matrixRow = @"| % 8.2f  % 8.2f  % 8.2f |";
-    NSLog(@"Calibration results:");
     NSLog(matrixRow, focal.x, 0.0, center.x);
     NSLog(matrixRow, 0.0, focal.y, center.y);
     NSLog(matrixRow, 0.0, 0.0, 1.0);
@@ -37,7 +36,7 @@
     int numCorners = boardWidth * boardWidth;
     int totalCorners = numImages * numCorners;
         
-    // Allocate Sotrage
+    // Allocate Storage
     CvMat* image_points         = cvCreateMat(totalCorners, 2, CV_32FC1);
     CvMat* object_points		= cvCreateMat(totalCorners, 3, CV_32FC1);
     CvMat* point_counts			= cvCreateMat(numImages, 1, CV_32SC1);
@@ -45,8 +44,8 @@
     CvMat* distortion_coeffs	= cvCreateMat(5, 1, CV_32FC1);
     
     // Insert corner data and faked 3d data into matrices
-    for (int i = 0; i < numImages; i++) {
-        for (int j = i * numCorners, k = 0; k < numCorners; j++, k++) {
+    for (int i = 0, j = 0; i < numImages; i++) {
+        for (int k = 0; k < numCorners; j++, k++) {
             CV_MAT_ELEM(*image_points, float, j, 0) = corners[j].x;
             CV_MAT_ELEM(*image_points, float, j, 1) = corners[j].y;
             CV_MAT_ELEM(*object_points, float, j, 0) = k / boardWidth;
@@ -69,7 +68,7 @@
     center.x = CV_MAT_ELEM(*intrinsic_matrix, float, 0, 2);
     center.y = CV_MAT_ELEM(*intrinsic_matrix, float, 1, 2);
     for (int i = 0; i < 5; i++)
-        distorion[i] = CV_MAT_ELEM(*distortion_coeffs, float, i, 0);    
+        distortion[i] = CV_MAT_ELEM(*distortion_coeffs, float, i, 0);    
      
     // Release CV memory
     cvReleaseMat(&image_points);

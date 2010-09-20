@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../opencv/cv.h"
 
 
 @protocol AECalibrationTarget
 
 - (void)setResolution:(CGSize)size;
-- (void)calibrateWithImages:(NSArray*)images intoModifiedImages:(NSMutableArray*)modified;
+- (void)addCorners:(CvPoint2D32f*)newCorners;
+- (BOOL)hasEnoughCorners;
+- (void)calibrate;
+- (float)progress;
 
 @end

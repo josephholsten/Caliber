@@ -12,9 +12,6 @@
 
 @interface AECameraMultiCalibration (PrivateMethods)
 - (void)forEachCalibration:(void (^)(AECameraCalibration* calibration))block;
-- (void)findChessboardsInImages:(NSArray*)images
-                    intoCorners:(CvPoint2D32f*)corners
-             intoModifiedImages:(NSMutableArray*)modified;
 @end
 
 
@@ -25,6 +22,7 @@
     if (![super init])
         return nil;
     
+    numImages = 0;
     noneFixed = [[AECameraCalibration alloc] initWithFlags:0];
     aspectFixed = [[AECameraCalibration alloc] initWithFlags:CV_CALIB_FIX_ASPECT_RATIO];
     centerFixed = [[AECameraCalibration alloc] initWithFlags:CV_CALIB_FIX_PRINCIPAL_POINT];
@@ -46,38 +44,43 @@
     resolution = size;
 }
 
-- (void)calibrateWithImages:(NSArray *)images intoModifiedImages:(NSMutableArray*)modified
+- (BOOL)hasEnoughCorners
 {
-    int numImages = [images count];
-    int numCorners = 7 * 7;
-    CvPoint2D32f corners[numCorners * numImages];
+    return (numImages >= 15);
+}
+
+- (float)progress
+{
+    return ((float) numImages) / 15.0;
+}
+
+- (void)addCorners:(CvPoint2D32f*)newCorners
+{
+    int chunk = BOARD_SIZE * BOARD_SIZE;
+    for (int i = 0, j = numImages * chunk; i < chunk; i++, j++)
+        corners[j] = newCorners[i];
+    numImages++;
+}
+
+- (void)calibrate
+{
     CvPoint2D32f* cornersPtr = &corners[0];
-    
-    [self findChessboardsInImages:images intoCorners:cornersPtr intoModifiedImages:modified];
-    
     [self forEachCalibration:^(AECameraCalibration* calibration) {
-        [calibration calibrate:numImages
-                   withCorners:cornersPtr
+        [calibration calibrate:numImages 
+                   withCorners:cornersPtr 
                  andResolution:resolution];
     }];
     
+    NSLog(@"None fixed:");
+    [noneFixed logResults];
+    NSLog(@"Aspect fixed:");
+    [aspectFixed logResults];
+    NSLog(@"Center fixed:");
     [centerFixed logResults];
+    NSLog(@"Both fixed:");
+    [bothFixed logResults];
 }
 
-- (void)findChessboardsInImages:(NSArray*)images
-                    intoCorners:(CvPoint2D32f*)corners
-             intoModifiedImages:(NSMutableArray*)modified
-{
-    int numImages = [images count];
-    int numCorners = 7 * 7;
-    CvPoint2D32f* imageCorners = corners;
-    
-    for (int i = 0; i < numImages; i++, imageCorners += numCorners) {
-        UIImage* oldImage = [images objectAtIndex:i];
-        UIImage* newImage = [Utilities opencvChessboardDetect:oldImage forCorners:imageCorners];
-        [modified addObject:newImage];
-    }
-}
 
 - (void)dealloc
 {
