@@ -11,11 +11,13 @@
 #import "AECalibrationTarget.h"
 
 @interface AEFrameCaptureViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate> {
+    
     AVCaptureVideoPreviewLayer* previewLayer;
     AVCaptureSession* captureSession;
     IBOutlet UIProgressView* progressView;
     BOOL collectFrames;
     id<AECalibrationTarget> calibrationTarget;
+    
 }
 
 @property (nonatomic, assign) id<AECalibrationTarget> calibrationTarget;

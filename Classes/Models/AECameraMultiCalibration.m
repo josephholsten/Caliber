@@ -46,19 +46,18 @@
 
 - (BOOL)hasEnoughCorners
 {
-    return (numImages >= 15);
+    return (numImages >= MIN_CALIB_IMAGES);
 }
 
 - (float)progress
 {
-    return ((float) numImages) / 15.0;
+    return ((float) numImages) / MIN_CALIB_IMAGES;
 }
 
 - (void)addCorners:(CvPoint2D32f*)newCorners
 {
     int chunk = BOARD_SIZE * BOARD_SIZE;
-    for (int i = 0, j = numImages * chunk; i < chunk; i++, j++)
-        corners[j] = newCorners[i];
+    memcpy(corners + numImages * chunk, newCorners, chunk * sizeof(CvPoint2D32f));
     numImages++;
 }
 

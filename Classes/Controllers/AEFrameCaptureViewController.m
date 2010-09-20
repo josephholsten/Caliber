@@ -62,6 +62,7 @@
 	previewLayer.frame = self.view.bounds;
 	previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	[self.view.layer addSublayer:previewLayer];
+    [self.view bringSubviewToFront:progressView];
     NSLog(@"Added preview layer");    
     [captureSession startRunning];
     NSLog(@"Started capture session");
@@ -72,6 +73,11 @@
     [previewLayer release];
     [captureSession stopRunning];
     [captureSession release];
+}
+
+- (void)updateProgress:(id)ignored
+{
+    progressView.progress = [self.calibrationTarget progress];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput 
@@ -126,7 +132,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         if ([Utilities opencvChessboardDetect:small forCorners:corners]) {
             [self.calibrationTarget addCorners:&corners[0]];
             NSLog(@"Found chessboard; %f%% done", (100.0 * [self.calibrationTarget progress]));
-            // TODO: advance progress bar
+            [self performSelectorOnMainThread:@selector(updateProgress:) withObject:nil waitUntilDone:NO];
         }
         
         if ([self.calibrationTarget hasEnoughCorners]) {

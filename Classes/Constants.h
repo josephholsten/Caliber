@@ -7,6 +7,6 @@
  *
  */
 
-
-#define MAX_CALIB_IMAGES 20
+#define MIN_CALIB_IMAGES 10
+#define MAX_CALIB_IMAGES 15
 #define BOARD_SIZE 7
