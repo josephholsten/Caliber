@@ -55,8 +55,8 @@
         CV_MAT_ELEM(*point_counts, int, i, 0) = numCorners;
     }
     
-    CV_MAT_ELEM(*intrinsic_matrix, float, 0, 0) = 1.0;
-    CV_MAT_ELEM(*intrinsic_matrix, float, 1, 1) = 1.0;
+    CV_MAT_ELEM(*intrinsic_matrix, float, 0, 0) = (CGFloat) 1.0;
+    CV_MAT_ELEM(*intrinsic_matrix, float, 1, 1) = (CGFloat) 1.0;
     
     // Calibrate the camera
     cvCalibrateCamera2(object_points, image_points, point_counts, cvSize(resolution.width, resolution.height),
